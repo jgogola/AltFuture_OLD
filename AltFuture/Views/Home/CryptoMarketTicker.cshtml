@@ -1,0 +1,21 @@
+﻿@model IList<CryptoMarketTicker>
+
+@{
+    ViewData["Title"] = "Crypto Market Ticker";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+    <ul>
+    @foreach (var item in Model)      
+    {     
+        <li>
+            <ul>
+             <li>@item.CryptoName</li> 
+             <li>@item.TickerSymbol</li>
+             <li>@item.LastUpdated</li>
+             <li>@item.Price</li>
+            </ul>
+        </li>
+    }  
+    </ul>

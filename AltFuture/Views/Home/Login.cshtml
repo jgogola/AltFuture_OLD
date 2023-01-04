@@ -1,0 +1,48 @@
+﻿@model CredentialViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    .formTS {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .container {
+        background-image:  url('_img/Locations_HQ.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+
+    header {
+        background-color: #FFF;
+    }
+
+    /* This will have to change since using !important can cause later problems. */
+    .expand {
+        padding-left: 0 !important;
+    }
+</style>
+
+<form method="post" class="formTS" style=" margin: 0 auto; position: relative;">
+    <h2 id="titleSysMaint" class="dialog_label" style="font-size: 1.8em;">User Login</h2>
+
+    <div class="divForm">
+        <label for="txtUsername">User Name:</label>
+        <input id="txtUsername" type="text" class="formText" asp-for="user_name" />
+        <span asp-validation-for="user_name"></span>
+    </div>
+
+    <div class="divForm">
+        <label for="txtPassword">Password:</label>
+        <input id="txtPassword" type="password" class="formText" asp-for="password" />
+        <span asp-validation-for="password"></span>
+    </div>
+
+    <div class="footerRow">
+        <input type="submit" value="Login" class="btn-submit" />
+        <input type="reset" value="Reset" class="btn-cancel" />
+    </div>
+
+</form>

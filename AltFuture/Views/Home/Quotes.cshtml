@@ -1,0 +1,13 @@
+﻿@model IList<Crypto>
+
+@{
+    ViewData["Title"] = "Crypto Market Ticker";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>@Model[0].symbol @Model[0].quote.USD.price</p>
+<p>@Model[1].symbol @Model[1].quote.USD.price</p>
+
+   
+
+

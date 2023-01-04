@@ -1,0 +1,101 @@
+﻿@model List<Crypto_Portfolio>
+
+@{
+    ViewData["Title"] = "Crypto Portfolio";
+}
+<h1>@ViewData["Title"]</h1>
+<style>
+    th {
+        text-align: center;
+    }
+
+    th, td {
+        padding: 0px 6px;
+    }
+
+    .c {
+        text-align: center;
+    }
+
+    .r {
+        text-align: right;
+    }
+
+    .b {
+        font-weight: bold;
+    }
+</style>
+<a asp-area="Cryptos" asp-controller="Portfolio" asp-action="UpdateCryptoPricesAPI">View Crypto Prices (API)</a>
+
+<form asp-area="Cryptos" asp-action="UpdateCryptoPricesAPI" method="post">
+    <input type="submit" value="Update Crypto Prices (API)" />
+</form>
+
+
+@if (Model.Count > 0)
+{
+    <section title="Portfolio of Crypto Assets" style="width: 100%">
+        <table id="tblCryptoPortfolio" class="tblListView display">
+            <thead>
+                <tr>
+                    <th>Crypto</th>
+                    <th>Ticker</th>
+                    <th>Number of Orders</th>
+                    <th>Quantity</th>
+                    <th>Average Buy Price</th>
+                    <th>Price</th>
+                    <th>Total Invested</th>
+                    <th>Unrealized Profit</th>
+                    <th>Current Worth</th>
+                    <th>Date Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var altRow = false;
+                    @foreach (Crypto_Portfolio portfolio in Model)
+                    {
+                        <tr style="background-color:@(altRow ? "#fff" : "#E0EBEB");">
+                            <td class="b">
+                                @(portfolio.crypto_price.lk_crypto.crypto_name)
+                            </td>
+                            <td class="b">
+                                @(portfolio.crypto_price.lk_crypto.ticker_symbol)
+                            </td>
+                            <td class="c">
+                                @(portfolio.number_of_orders)
+                            </td>
+                            <td class="r">
+                                @(portfolio.quantity)
+                            </td>
+                            <td class="r">
+                                @(portfolio.average_buy_price.ToString("C3"))
+                            </td>
+                            <td class="r">
+                                @(portfolio.crypto_price.crypto_price.ToString("C3"))
+                            </td>
+                            <td class="r">
+                                @(portfolio.total_invested.ToString("C3"))
+                            </td>
+                            <td class="r">
+                                @(portfolio.unrealized_profit.ToString("C3"))
+                            </td>
+                            <td class="r">
+                                @(portfolio.current_worth.ToString("C3"))
+                            </td>
+                            <td style="font-size: .7em;">
+                                @(portfolio.crypto_price.date_updated)
+                            </td>
+                        </tr>
+
+                        altRow = !altRow;
+                    }
+                }
+            </tbody>
+        </table>
+    </section>
+}
+else
+{
+    <p>No crypto assets exist in portfolio.</p>
+}
