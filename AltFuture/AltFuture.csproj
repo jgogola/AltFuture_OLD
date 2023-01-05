@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -34,6 +34,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\CDP\Controllers\" />
+    <Folder Include="Areas\CDP\Data\" />
+    <Folder Include="Areas\CDP\Models\" />
+    <Folder Include="Areas\CDP\Views\" />
     <Folder Include="Areas\Competitions\Data\" />
     <Folder Include="Areas\Cryptos\Data\" />
   </ItemGroup>
