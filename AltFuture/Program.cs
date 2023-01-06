@@ -22,6 +22,9 @@ builder.Services.AddScoped<ILKCompetitionTypeRepository, LKCompetitionTypeReposi
 builder.Services.AddScoped<ICompetitionRepository, CompetitionRepository>();
 builder.Services.AddScoped<ICompetitionPlayerRepository, CompetitionPlayerRepository>();
 
+builder.Services.AddScoped<ILKCelebrityTypeRepository, LKCelebrityTypeRepository>();
+builder.Services.AddScoped<ICelebrityRepository, CelebrityRepository>();
+
 
 builder.Services.AddSession(options =>
 {

@@ -14,7 +14,7 @@ namespace AltFuture.Services
 
         public Celebrity CelebrityGet(int celebrity_key)
         {
-            DataTable dt = _db.GetDT("comp.usp_Celebrity_Get", new List<Object> { celebrity_key });
+            DataTable dt = _db.GetDT("cdp.usp_Celebrity_Get", new List<Object> { celebrity_key });
 
             if(dt.Rows.Count > 0)
             {
@@ -48,7 +48,7 @@ namespace AltFuture.Services
 
         public List<Celebrity> CelebrityGetList(string celebrity_name = "", int is_dead = -1)
         {
-            DataTable dt = _db.GetDT("comp.usp_Celebrity_Get_List", new List<Object> { celebrity_name, is_dead });
+            DataTable dt = _db.GetDT("cdp.usp_Celebrity_Get_List", new List<Object> { celebrity_name, is_dead });
             List<Celebrity> celebrities = new List<Celebrity>();
 
             foreach (DataRow dr in dt.Rows)
@@ -65,7 +65,7 @@ namespace AltFuture.Services
                     celebrity_key = (int)dr["celebrity_key"],
                     celebrity_name = (string)dr["celebrity_name"],
                     birth_date = (DateTime)dr["birth_date"],
-                    death_date = (DateTime)dr["death_date"],
+                    death_date = Convert.IsDBNull(dr["death_date"]) ? null : (DateTime?)dr["death_date"],
                     is_dead = (Boolean)dr["is_dead"],
                     age = (int)dr["age"],
                     points = (int)dr["points"],
