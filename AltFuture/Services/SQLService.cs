@@ -43,7 +43,7 @@ namespace AltFuture.Services
 
         public int GetRetVal(string storedProcName, List<Object>? parameters = null, string connectionStringName = "AltFuture")
         {
-            int retVal;
+            
 
             SqlConnection sqlConnection = new SqlConnection(_configuration.GetConnectionString(connectionStringName));
             sqlConnection.Open();
@@ -61,10 +61,15 @@ namespace AltFuture.Services
                 }
             }
 
-            retVal = cmd.ExecuteNonQuery();
-            sqlConnection.Close();
 
-            return retVal;
+            int rows_affected = cmd.ExecuteNonQuery();
+
+            //(int)cmd.Parameters.Cast<SqlParameter>().ToList().First(parameter => parameter.ParameterName == "@Return_Value").Value
+            int returnValue = (int)cmd.Parameters[0].Value; //* Will be the @Return_Value parameter.
+
+            sqlConnection.Close();
+            return returnValue;
+
         }
     }
 }

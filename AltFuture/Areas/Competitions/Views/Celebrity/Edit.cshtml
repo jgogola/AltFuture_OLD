@@ -1,7 +1,7 @@
 ﻿@model Celebrity
 
 @{
-    ViewData["Title"] = "Add a Celebrity";
+    ViewData["Title"] = "Edit Celebrity";
 }
 <h1>@ViewData["Title"]</h1>
 <style>
@@ -23,9 +23,9 @@
 
 <a class="nav-link text-dark" asp-area="Competitions" asp-controller="Celebrity" asp-action="Index">Celebrities</a>
 
-<form asp-area="Competitions" asp-controller="Celebrity" asp-action="Create" method="post">
+<form asp-area="Competitions" asp-controller="Celebrity" asp-action="Edit" method="post">
     <fieldset>
-        <legend>Add New Celebrity</legend>
+        <legend>Edit Celebrity</legend>
 
         <div>
             <label asp-for="celebrity_name"></label>
@@ -54,6 +54,7 @@
         </div>
 
         <div class="btnBar">
+            <input type="hidden" asp-for="celebrity_key" />
             <input type="submit" value="Save" class="btn-save" />
         </div>
     </fieldset>
