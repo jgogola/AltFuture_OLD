@@ -31,10 +31,11 @@ namespace AltFuture.Services
                     celebrity_key = (int)dr["celebrity_key"],
                     celebrity_name = (string)dr["celebrity_name"],
                     birth_date = (DateTime)dr["birth_date"],
-                    death_date = (DateTime)dr["death_date"],
+                    death_date = Convert.IsDBNull(dr["death_date"]) ? null : (DateTime?)dr["death_date"],
                     is_dead = (Boolean)dr["is_dead"],
                     age = (int)dr["age"],
                     points = (int)dr["points"],
+                    lk_celebrity_type_key = (int)dr["lk_celebrity_type_key"],
 
                     lk_celebrity_type = lk_celebrity_type
 
@@ -69,6 +70,7 @@ namespace AltFuture.Services
                     is_dead = (Boolean)dr["is_dead"],
                     age = (int)dr["age"],
                     points = (int)dr["points"],
+                    lk_celebrity_type_key = (int)dr["lk_celebrity_type_key"],
 
                     lk_celebrity_type = lk_celebrity_type
 
@@ -85,9 +87,22 @@ namespace AltFuture.Services
             return _db.GetRetVal("cdp.usp_Celebrity_Add",
                                     new() {
                                         celebrity.celebrity_name,
-                                        celebrity.lk_celebrity_type.lk_celebrity_type_key,
+                                        celebrity.lk_celebrity_type_key,
                                         celebrity.birth_date,
-                                        celebrity.death_date
+                                        celebrity.death_date ?? (object)DBNull.Value
+                                    }
+                                );
+        }
+
+        public int CelebrityUpd(Celebrity celebrity)
+        {
+            return _db.GetRetVal("cdp.usp_Celebrity_Upd",
+                                    new() {
+                                        celebrity.celebrity_key,
+                                        celebrity.celebrity_name,
+                                        celebrity.lk_celebrity_type_key,
+                                        celebrity.birth_date,
+                                        celebrity.death_date ?? (object)DBNull.Value
                                     }
                                 );
         }
