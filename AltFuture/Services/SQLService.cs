@@ -12,7 +12,7 @@ namespace AltFuture.Services
             this._configuration = configuration;
         }
 
-        public DataTable GetDT(string storedProcName, List<Object>? parameters = null, string connectionStringName = "AltFuture")
+        public DataTable GetDT(string storedProcName, List<Object>? parameters = null, string connectionStringName = "AltFuture2")
         {
             DataTable dt = new DataTable();
             SqlConnection sqlConnection = new SqlConnection(_configuration.GetConnectionString(connectionStringName));
@@ -41,7 +41,7 @@ namespace AltFuture.Services
         }
 
 
-        public int GetRetVal(string storedProcName, List<Object>? parameters = null, string connectionStringName = "AltFuture")
+        public int GetRetVal(string storedProcName, List<Object>? parameters = null, string connectionStringName = "AltFuture2")
         {
             
 

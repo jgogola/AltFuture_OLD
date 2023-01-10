@@ -53,6 +53,11 @@ namespace AltFuture.Services
             _db.GetRetVal("cdp.usp_lk_Celebrity_Type_Upd", new() { lk_celebry_type.lk_celebrity_type_key, lk_celebry_type.celebrity_type });
         }
 
+        public int LKCelebrityTypeDel(int lk_celebry_type_key)
+        {
+            return _db.GetRetVal("cdp.usp_lk_Celebrity_Type_Del", new() { lk_celebry_type_key });
+        }
+
         public void Dispose()
         {
             System.GC.Collect();

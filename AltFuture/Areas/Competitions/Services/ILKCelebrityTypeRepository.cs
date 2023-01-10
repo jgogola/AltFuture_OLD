@@ -13,6 +13,8 @@ namespace AltFuture.Areas.Competitions.Services
 
         void LKCelebrityTypeUpd(LK_Celebrity_Type lk_celebry_type);
 
+        int LKCelebrityTypeDel(int lk_celebry_type_key);
+
 
     }
 }

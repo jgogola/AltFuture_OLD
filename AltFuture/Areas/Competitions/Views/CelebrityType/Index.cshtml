@@ -1,0 +1,70 @@
+﻿@model List<LK_Celebrity_Type>
+
+@{
+    ViewData["Title"] = "Celebrity Types";
+}
+<h1>@ViewData["Title"]</h1>
+<style>
+    th {
+        text-align: center;
+    }
+
+    th, td {
+        padding: 0px 6px;
+    }
+
+    .c {
+        text-align: center;
+    }
+
+    .r {
+        text-align: right;
+    }
+
+    .b {
+        font-weight: bold;
+    }
+</style>
+
+<p>@TempData["CelebrityTypeUserMsg"]</p>
+
+<a class="nav-link text-dark" asp-area="Competitions" asp-controller="CelebrityType" asp-action="Create">Add New Celebrity Type</a>
+
+@if (Model.Count > 0)
+{
+    <form method="post">
+    <section title="Celebirty Types" style="width: 100%">
+        <table id="tblCelebrityTypes" class="tblListView display">
+            <thead>
+                <tr>
+                    <th>Celebrity Type</th>
+                    <th>Action</th>
+                 </tr>
+            </thead>
+            <tbody>
+                @{
+                    var altRow = false;
+                    @foreach (LK_Celebrity_Type lk_celebrity_type in Model)
+                    {
+                        <tr style="background-color:@(altRow ? "#fff" : "#E0EBEB");">
+                            <td class="b">
+                                @(lk_celebrity_type.celebrity_type)
+                            </td>
+                            <td class="c">
+                                <a class="nav-link text-dark" asp-area="Competitions" asp-controller="CelebrityType" asp-action="Edit" asp-route-id="@(lk_celebrity_type.lk_celebrity_type_key)">Edit</a>
+                                <button asp-area="Competitions" asp-controller="CelebrityType" asp-action="Delete" asp-route-id="@(lk_celebrity_type.lk_celebrity_type_key)" asp-route-type="@(lk_celebrity_type.celebrity_type)" onclick="return confirm('Are you sure you want to delete type @(lk_celebrity_type.celebrity_type)?');">Delete</button>
+                            </td>
+                        </tr>
+
+                        altRow = !altRow;
+                    }
+                }
+            </tbody>
+        </table>
+    </section>
+    </form>
+}
+else
+{
+    <p>No celebrities found.</p>
+}

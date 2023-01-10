@@ -163,78 +163,78 @@ namespace AltFuture.Areas.Competitions.Controllers
             }
         }
 
-        #region "LK_Celebirty_Type CRUD"
+        //#region "LK_Celebirty_Type CRUD"
 
-        public ActionResult CreateCelebrityType()
-        {
-            return View();
-        }
+        //public ActionResult CreateCelebrityType()
+        //{
+        //    return View();
+        //}
 
-        // POST: CelebrityController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateCelebrityType(LK_Celebrity_Type lk_celebrity_type)
-        {
+        //// POST: CelebrityController/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CreateCelebrityType(LK_Celebrity_Type lk_celebrity_type)
+        //{
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    int lk_celebrity_type_key = _lkCelebrityTypeRepository.LKCelebrityTypeAdd(lk_celebrity_type);
-                    ViewBag.UserMsg = "Your Celebrity Type was added successfully.";
-                    return RedirectToAction("EditCelebrityType", new { id = lk_celebrity_type_key, add = true });
-                    //return View();
-                }
-                catch
-                {
-                    ViewBag.UserMsg = "CATCH!";
-                    return View(lk_celebrity_type);
-                }
-            }
-            else
-            {
-                ViewBag.UserMsg = "ELSE!";
-                return View(lk_celebrity_type);
-            }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            int lk_celebrity_type_key = _lkCelebrityTypeRepository.LKCelebrityTypeAdd(lk_celebrity_type);
+        //            ViewBag.UserMsg = "Your Celebrity Type was added successfully.";
+        //            return RedirectToAction("EditCelebrityType", new { id = lk_celebrity_type_key, add = true });
+        //            //return View();
+        //        }
+        //        catch
+        //        {
+        //            ViewBag.UserMsg = "CATCH!";
+        //            return View(lk_celebrity_type);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ViewBag.UserMsg = "ELSE!";
+        //        return View(lk_celebrity_type);
+        //    }
 
-        }
+        //}
 
 
-        // GET: CelebrityController/EditCelebrityType/5
-        public ActionResult EditCelebrityType(int id)
-        {
-            LK_Celebrity_Type lk_celebrity_type = _lkCelebrityTypeRepository.LKCelebrityTypeGet(id);
-            return View(lk_celebrity_type);
-        }
+        //// GET: CelebrityController/EditCelebrityType/5
+        //public ActionResult EditCelebrityType(int id)
+        //{
+        //    LK_Celebrity_Type lk_celebrity_type = _lkCelebrityTypeRepository.LKCelebrityTypeGet(id);
+        //    return View(lk_celebrity_type);
+        //}
 
-        // POST: CelebrityController/EditCelebrityType/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditCelebrityType(int id, LK_Celebrity_Type lk_celebrity_type)
-        {
+        //// POST: CelebrityController/EditCelebrityType/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult EditCelebrityType(int id, LK_Celebrity_Type lk_celebrity_type)
+        //{
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _lkCelebrityTypeRepository.LKCelebrityTypeUpd(lk_celebrity_type);
-                    ViewBag.UserMsg = "Your Celebrity Type was updated successfully.";
-                    // return RedirectToAction(nameof(Index));
-                    return View(lk_celebrity_type);
-                }
-                catch
-                {
-                    ViewBag.UserMsg = "CATCH!";
-                    return View(lk_celebrity_type);
-                }
-            }
-            else
-            {
-                ViewBag.UserMsg = "ELSE!";
-                return View(lk_celebrity_type);
-            }
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _lkCelebrityTypeRepository.LKCelebrityTypeUpd(lk_celebrity_type);
+        //            ViewBag.UserMsg = "Your Celebrity Type was updated successfully.";
+        //            // return RedirectToAction(nameof(Index));
+        //            return View(lk_celebrity_type);
+        //        }
+        //        catch
+        //        {
+        //            ViewBag.UserMsg = "CATCH!";
+        //            return View(lk_celebrity_type);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ViewBag.UserMsg = "ELSE!";
+        //        return View(lk_celebrity_type);
+        //    }
+        //}
 
-        #endregion
+        //#endregion
     }
 }

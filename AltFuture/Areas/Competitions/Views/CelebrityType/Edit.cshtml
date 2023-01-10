@@ -5,10 +5,10 @@
 <h1>@ViewBag.PageTitle</h1>
 <h2>@ViewBag.UserMsg</h2>
 
-<a class="nav-link text-dark" asp-area="Competitions" asp-controller="Celebrity" asp-action="Index">Celebrities</a>
+<a class="nav-link text-dark" asp-area="Competitions" asp-controller="CelebrityType" asp-action="Index">Celebrity Types</a>
 
 
-<form asp-area="Competitions" asp-controller="Celebrity" asp-action="EditCelebrityType" method="post">
+<form asp-area="Competitions" asp-controller="CelebrityType" asp-action="Edit" method="post">
 
     <div>
         <label asp-for="celebrity_type"></label>
