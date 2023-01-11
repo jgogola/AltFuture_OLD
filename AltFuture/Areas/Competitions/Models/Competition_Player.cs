@@ -1,4 +1,5 @@
-﻿namespace AltFuture.Areas.Competitions.Models
+﻿ 
+namespace AltFuture.Areas.Competitions.Models
 {
     public class Competition_Player
     {
