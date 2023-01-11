@@ -22,7 +22,7 @@ namespace AltFuture.Services
 
                 LK_Competition_Type lk_competition_type = new LK_Competition_Type
                 {
-                    lk_competition_type_key = (int)dr["lk_copmetition_type_key"],
+                    lk_competition_type_key = (int)dr["lk_competition_type_key"],
                     competition_type = (string)dr["competition_type"]
                 };           
 
@@ -41,7 +41,7 @@ namespace AltFuture.Services
             {
                 LK_Competition_Type lk_competition_type = new LK_Competition_Type
                 {
-                    lk_competition_type_key = (int)dr["lk_copmetition_type_key"],
+                    lk_competition_type_key = (int)dr["lk_competition_type_key"],
                     competition_type = (string)dr["competition_type"]
                 };
 

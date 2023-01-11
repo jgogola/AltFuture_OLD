@@ -6,7 +6,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
     {
         Player_Celebrity PlayerCelebrityGet(int player_celebrity_key);
 
-        List<Player_Celebrity> PlayerCelebrityGetListByPlayer(int competition_key, int competition_player_key);
+        List<Player_Celebrity> PlayerCelebrityGetListByPlayer(int competition_key, int user_key);
 
         List<Player_Celebrity> PlayerCelebrityGetListByCompetition(int competition_key);
 

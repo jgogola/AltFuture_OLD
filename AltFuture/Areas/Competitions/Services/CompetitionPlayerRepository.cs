@@ -36,7 +36,7 @@ namespace AltFuture.Services
 
                 Competition competition = new Competition
                 {
-                    competition_key = (int)dr["lk_copmetition_type_key"],
+                    competition_key = (int)dr["lk_competition_type_key"],
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
@@ -49,7 +49,7 @@ namespace AltFuture.Services
 
                 Competition_Player competition_player = new Competition_Player
                 {
-                    competition_player_key = (int)dr["cometition_player_key"],
+                    competition_player_key = (int)dr["competition_player_key"],
                     dues_collected = (Boolean)dr["dues_collected"],
                     last_viewed_date = (DateTime)dr["last_viewed_date"],
                     user = user,

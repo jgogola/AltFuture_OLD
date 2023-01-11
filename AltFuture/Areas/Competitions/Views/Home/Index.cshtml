@@ -37,6 +37,7 @@
                     <th>Competition</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>View</th>
                  </tr>
             </thead>
             <tbody>
@@ -53,6 +54,9 @@
                             </td>
                             <td class="r">
                                 @(competition_player.competition.competition_end_date)
+                            </td>
+                            <td class="c">
+                                <a asp-area="CelebrityDeathPool" asp-controller="MyCelebrityRoster" asp-action="Index" asp-route-id="@(competition_player.competition.competition_key)">View</a>
                             </td>
                         </tr>
 

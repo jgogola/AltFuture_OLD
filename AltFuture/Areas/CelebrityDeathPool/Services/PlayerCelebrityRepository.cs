@@ -58,7 +58,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
 
                 Competition competition = new Competition
                 {
-                    competition_key = (int)dr["lk_copmetition_type_key"],
+                    competition_key = (int)dr["lk_competition_type_key"],
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
@@ -71,7 +71,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
 
                 Competition_Player competition_player = new Competition_Player
                 {
-                    competition_player_key = (int)dr["cometition_player_key"],
+                    competition_player_key = (int)dr["competition_player_key"],
                     dues_collected = (Boolean)dr["dues_collected"],
                     last_viewed_date = (DateTime)dr["last_viewed_date"],
                     user = user,
@@ -81,8 +81,8 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                 Player_Celebrity player_celebrity = new Player_Celebrity
                 {
                     player_celebrity_key = (int)dr[""],
-                    competition_key = (int)dr["lk_copmetition_type_key"],
-                    competition_player_key = (int)dr["cometition_player_key"],
+                    competition_key = (int)dr["lk_competition_type_key"],
+                    competition_player_key = (int)dr["competition_player_key"],
                     celebrity_key = (int)dr["celebrity_key"],
                     is_winner = (Boolean)dr["is_winner"],
                     competition_player = competition_player,
@@ -96,9 +96,9 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
             return new Player_Celebrity();
         }
 
-        public List<Player_Celebrity> PlayerCelebrityGetListByPlayer(int competition_key, int competition_player_key)
+        public List<Player_Celebrity> PlayerCelebrityGetListByPlayer(int competition_key, int user_key)
         {
-            DataTable dt = _db.GetDT("cdp.usp_Player_Celebrity_Get_List", new List<object> { competition_key, competition_player_key });
+            DataTable dt = _db.GetDT("cdp.usp_Player_Celebrity_Get_List", new List<object> { competition_key, user_key });
             List<Player_Celebrity> player_celebrities = new List<Player_Celebrity>();
 
             foreach (DataRow dr in dt.Rows)
@@ -143,7 +143,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
 
                 Competition competition = new Competition
                 {
-                    competition_key = (int)dr["lk_copmetition_type_key"],
+                    competition_key = (int)dr["lk_competition_type_key"],
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
@@ -156,18 +156,18 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
 
                 Competition_Player competition_player = new Competition_Player
                 {
-                    competition_player_key = (int)dr["cometition_player_key"],
+                    competition_player_key = (int)dr["competition_player_key"],
                     dues_collected = (Boolean)dr["dues_collected"],
-                    last_viewed_date = (DateTime)dr["last_viewed_date"],
+                    last_viewed_date = Convert.IsDBNull(dr["last_viewed_date"]) ? null : (DateTime?)dr["last_viewed_date"],
                     user = user,
                     competition = competition
                 };
 
                 Player_Celebrity player_celebrity = new Player_Celebrity
                 {
-                    player_celebrity_key = (int)dr[""],
-                    competition_key = (int)dr["lk_copmetition_type_key"],
-                    competition_player_key = (int)dr["cometition_player_key"],
+                    player_celebrity_key = (int)dr["player_celebrity_key"],
+                    competition_key = (int)dr["lk_competition_type_key"],
+                    competition_player_key = (int)dr["competition_player_key"],
                     celebrity_key = (int)dr["celebrity_key"],
                     is_winner = (Boolean)dr["is_winner"],
                     competition_player = competition_player,
@@ -228,7 +228,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
 
                 Competition competition = new Competition
                 {
-                    competition_key = (int)dr["lk_copmetition_type_key"],
+                    competition_key = (int)dr["lk_competition_type_key"],
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
@@ -241,7 +241,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
 
                 Competition_Player competition_player = new Competition_Player
                 {
-                    competition_player_key = (int)dr["cometition_player_key"],
+                    competition_player_key = (int)dr["competition_player_key"],
                     dues_collected = (Boolean)dr["dues_collected"],
                     last_viewed_date = (DateTime)dr["last_viewed_date"],
                     user = user,
@@ -251,8 +251,8 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                 Player_Celebrity player_celebrity = new Player_Celebrity
                 {
                     player_celebrity_key = (int)dr[""],
-                    competition_key = (int)dr["lk_copmetition_type_key"],
-                    competition_player_key = (int)dr["cometition_player_key"],
+                    competition_key = (int)dr["lk_competition_type_key"],
+                    competition_player_key = (int)dr["competition_player_key"],
                     celebrity_key = (int)dr["celebrity_key"],
                     is_winner = (Boolean)dr["is_winner"],
                     competition_player = competition_player,
