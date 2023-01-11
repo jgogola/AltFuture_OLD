@@ -1,19 +1,18 @@
-﻿using AltFuture.Areas.Competitions.Services;
-using AltFuture.Areas.Competitions.Models;
-using AltFuture.Services;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using AltFuture.Areas.CelebrityDeathPool.Models;
+using AltFuture.Areas.CelebrityDeathPool.Services;
 
-namespace AltFuture.Areas.Competitions.Controllers
+namespace AltFuture.Areas.CelebrityDeathPool.Controllers
 {
-    [Area("Competitions")]
+    [Area("CelebrityDeathPool")]
     [Authorize]
     [Authorize(Policy = "CompetitionPlayerPolicy")]
     public class CelebrityController : Controller
     {
-       // private readonly IHttpContextAccessor _contextAccessor;
+        // private readonly IHttpContextAccessor _contextAccessor;
 
         private LKCelebrityTypeRepository _lkCelebrityTypeRepository;
         private CelebrityRepository _celebrityRepository;
@@ -22,7 +21,7 @@ namespace AltFuture.Areas.Competitions.Controllers
         public CelebrityController(
             ILKCelebrityTypeRepository lkCelebrityTypeRepository,
             ICelebrityRepository celebrityRepository
-            ) 
+            )
         {
             _lkCelebrityTypeRepository = (LKCelebrityTypeRepository)lkCelebrityTypeRepository;
             _celebrityRepository = (CelebrityRepository)celebrityRepository;
@@ -55,10 +54,10 @@ namespace AltFuture.Areas.Competitions.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Celebrity celebrity)
         {
-            Boolean is_success = true;
+            bool is_success = true;
             string userMsg = "";
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
@@ -79,10 +78,10 @@ namespace AltFuture.Areas.Competitions.Controllers
 
             ViewBag.UserMsg = userMsg;
 
-            if(is_success)
+            if (is_success)
             {
                 TempData["CelebrityUserMsg"] = $"{celebrity.celebrity_name} was successfully added.";
-                return RedirectToAction(nameof(Index)); 
+                return RedirectToAction(nameof(Index));
             }
             else
             {
@@ -105,7 +104,7 @@ namespace AltFuture.Areas.Competitions.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, Celebrity celebrity)
         {
-            Boolean is_success = true;
+            bool is_success = true;
             string userMsg = "";
 
             if (ModelState.IsValid)

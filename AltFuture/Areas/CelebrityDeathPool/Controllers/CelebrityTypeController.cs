@@ -1,12 +1,12 @@
-﻿using AltFuture.Areas.Competitions.Services;
-using AltFuture.Areas.Competitions.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using AltFuture.Areas.CelebrityDeathPool.Models;
+using AltFuture.Areas.CelebrityDeathPool.Services;
 
-namespace AltFuture.Areas.Competitions.Controllers
+namespace AltFuture.Areas.CelebrityDeathPool.Controllers
 {
-    [Area("Competitions")]
+    [Area("CelebrityDeathPool")]
     [Authorize]
     [Authorize(Policy = "CompetitionPlayerPolicy")]
     public class CelebrityTypeController : Controller
@@ -110,7 +110,7 @@ namespace AltFuture.Areas.Competitions.Controllers
             {
                 int success = _lkCelebrityTypeRepository.LKCelebrityTypeDel(id);
 
-                if(success == 1)
+                if (success == 1)
                 {
                     TempData["CelebrityTypeUserMsg"] = $"{type} was deleted successfully.";
                     return RedirectToAction(nameof(Index));

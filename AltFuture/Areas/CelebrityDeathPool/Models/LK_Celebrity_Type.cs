@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Areas.Competitions.Models
+namespace AltFuture.Areas.CelebrityDeathPool.Models
 {
     public class LK_Celebrity_Type
     {
@@ -8,7 +8,7 @@ namespace AltFuture.Areas.Competitions.Models
         public int lk_celebrity_type_key { get; set; }
 
         [Required]
-        [Display(Name ="Celebrity Type")]
+        [Display(Name = "Celebrity Type")]
         public string celebrity_type { get; set; } = "";
 
     }

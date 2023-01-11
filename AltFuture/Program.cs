@@ -4,6 +4,7 @@ global using AltFuture.Models.Extensions;
 global using AltFuture.Services;
 
 using System.Security.Claims;
+using AltFuture.Areas.CelebrityDeathPool.Services;
 using AltFuture.Areas.Competitions.Services;
 using AltFutureWeb.Areas.Cryptos.Services;
 
@@ -24,6 +25,8 @@ builder.Services.AddScoped<ICompetitionPlayerRepository, CompetitionPlayerReposi
 
 builder.Services.AddScoped<ILKCelebrityTypeRepository, LKCelebrityTypeRepository>();
 builder.Services.AddScoped<ICelebrityRepository, CelebrityRepository>();
+
+builder.Services.AddScoped<IPlayerCelebrityRepository, PlayerCelebrityRepository > ();
 
 
 builder.Services.AddSession(options =>

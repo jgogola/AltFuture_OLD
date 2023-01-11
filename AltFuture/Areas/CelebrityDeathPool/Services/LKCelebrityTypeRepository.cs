@@ -1,8 +1,7 @@
-﻿using AltFuture.Areas.Competitions.Models;
-using AltFuture.Areas.Competitions.Services;
+﻿using AltFuture.Areas.CelebrityDeathPool.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Services
+namespace AltFuture.Areas.CelebrityDeathPool.Services
 {
     public class LKCelebrityTypeRepository : ILKCelebrityTypeRepository
     {
@@ -14,13 +13,13 @@ namespace AltFuture.Services
 
         public LK_Celebrity_Type LKCelebrityTypeGet(int lk_celebrity_type_key)
         {
-            DataTable dt = _db.GetDT("cdp.usp_LK_Celebrity_Type_Get", new() { lk_celebrity_type_key});
+            DataTable dt = _db.GetDT("cdp.usp_LK_Celebrity_Type_Get", new() { lk_celebrity_type_key });
 
             return new LK_Celebrity_Type
-                {
-                    lk_celebrity_type_key = (int)dt.Rows[0]["lk_celebrity_type_key"],
-                    celebrity_type = (string)dt.Rows[0]["celebrity_type"]
-                };
+            {
+                lk_celebrity_type_key = (int)dt.Rows[0]["lk_celebrity_type_key"],
+                celebrity_type = (string)dt.Rows[0]["celebrity_type"]
+            };
 
         }
 
@@ -45,7 +44,7 @@ namespace AltFuture.Services
 
         public int LKCelebrityTypeAdd(LK_Celebrity_Type lk_celebry_type)
         {
-            return _db.GetRetVal("cdp.usp_lk_Celebrity_Type_Add", new() { lk_celebry_type.celebrity_type});
+            return _db.GetRetVal("cdp.usp_lk_Celebrity_Type_Add", new() { lk_celebry_type.celebrity_type });
         }
 
         public void LKCelebrityTypeUpd(LK_Celebrity_Type lk_celebry_type)
@@ -60,7 +59,7 @@ namespace AltFuture.Services
 
         public void Dispose()
         {
-            System.GC.Collect();
+            GC.Collect();
             System.Diagnostics.Debug.WriteLine("Disposing!!");
         }
     }

@@ -1,6 +1,6 @@
-﻿using AltFuture.Areas.Competitions.Models;
+﻿using AltFuture.Areas.CelebrityDeathPool.Models;
 
-namespace AltFuture.Areas.Competitions.Services
+namespace AltFuture.Areas.CelebrityDeathPool.Services
 {
     public interface ILKCelebrityTypeRepository : IDisposable
     {

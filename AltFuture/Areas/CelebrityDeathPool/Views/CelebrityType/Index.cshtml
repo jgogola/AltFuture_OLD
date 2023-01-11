@@ -28,7 +28,7 @@
 
 <p>@TempData["CelebrityTypeUserMsg"]</p>
 
-<a class="nav-link text-dark" asp-area="Competitions" asp-controller="CelebrityType" asp-action="Create">Add New Celebrity Type</a>
+<a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="CelebrityType" asp-action="Create">Add New Celebrity Type</a>
 
 @if (Model.Count > 0)
 {
@@ -51,8 +51,8 @@
                                 @(lk_celebrity_type.celebrity_type)
                             </td>
                             <td class="c">
-                                <a class="nav-link text-dark" asp-area="Competitions" asp-controller="CelebrityType" asp-action="Edit" asp-route-id="@(lk_celebrity_type.lk_celebrity_type_key)">Edit</a>
-                                <button asp-area="Competitions" asp-controller="CelebrityType" asp-action="Delete" asp-route-id="@(lk_celebrity_type.lk_celebrity_type_key)" asp-route-type="@(lk_celebrity_type.celebrity_type)" onclick="return confirm('Are you sure you want to delete type @(lk_celebrity_type.celebrity_type)?');">Delete</button>
+                                <a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="CelebrityType" asp-action="Edit" asp-route-id="@(lk_celebrity_type.lk_celebrity_type_key)">Edit</a>
+                                <button asp-area="CelebrityDeathPool" asp-controller="CelebrityType" asp-action="Delete" asp-route-id="@(lk_celebrity_type.lk_celebrity_type_key)" asp-route-type="@(lk_celebrity_type.celebrity_type)" onclick="return confirm('Are you sure you want to delete type @(lk_celebrity_type.celebrity_type)?');">Delete</button>
                             </td>
                         </tr>
 

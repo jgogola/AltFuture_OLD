@@ -34,8 +34,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\CelebrityDeathPool\Data\" />
     <Folder Include="Areas\Competitions\Data\" />
     <Folder Include="Areas\Cryptos\Data\" />
+    <Folder Include="Areas\FootballPool\Controllers\" />
+    <Folder Include="Areas\FootballPool\Data\" />
+    <Folder Include="Areas\FootballPool\Models\" />
+    <Folder Include="Areas\FootballPool\Views\" />
+    <Folder Include="Areas\SurvivorPool\Controllers\" />
+    <Folder Include="Areas\SurvivorPool\Data\" />
+    <Folder Include="Areas\SurvivorPool\Models\" />
+    <Folder Include="Areas\SurvivorPool\Views\" />
   </ItemGroup>
 
 </Project>
