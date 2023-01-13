@@ -53,6 +53,8 @@
                     var altRow = false;
                     @foreach (Player_Celebrity player_celebrity in Model)
                     {
+                        //@if(player_celebrity.is_winner == false)
+                        //{
                         <tr style="background-color:@(altRow ? "#fff" : "#E0EBEB");">
                             <td class="b">
                                 @(player_celebrity.celebrity.celebrity_name)
@@ -61,13 +63,13 @@
                                 @(player_celebrity.celebrity.lk_celebrity_type.celebrity_type)
                             </td>
                             <td class="r">
-                                @(player_celebrity.celebrity.birth_date)
+                                @($"{player_celebrity.celebrity.birth_date:MM/dd/yyyy}")
                             </td>
                             <td class="c">
                                 @(player_celebrity.celebrity.age)
                             </td>
                             <td class="r">
-                                @(player_celebrity.celebrity.death_date)
+                                @($"{player_celebrity.celebrity.death_date:MM/dd/yyyy}")
                             </td>
                             <td class="c">
                                 @(player_celebrity.celebrity.points)
@@ -79,7 +81,7 @@
                                 <a class="nav-link text-dark" asp-area="CelebrityDeathPool" asp-controller="Celebrity" asp-action="Edit" asp-route-id="@(player_celebrity.player_celebrity_key)">Edit</a>
                             </td>
                         </tr>
-
+                        //}
                         altRow = !altRow;
                     }
                 }
