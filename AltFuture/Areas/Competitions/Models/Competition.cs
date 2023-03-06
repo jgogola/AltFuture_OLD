@@ -10,7 +10,7 @@
 
         public string payout_desc { get; set; } = "";
 
-        public Boolean is_active { get; set; } = true;
+        public Boolean is_active_competition { get; set; } = true;
 
         public DateTime? competition_start_date { get; set; }
 

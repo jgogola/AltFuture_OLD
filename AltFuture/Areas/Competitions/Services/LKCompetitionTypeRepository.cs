@@ -2,7 +2,7 @@
 using AltFuture.Areas.Competitions.Services;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Services
+namespace AltFuture.Areas.Competitions.Services
 {
     public class LKCompetitionTypeRepository : ILKCompetitionTypeRepository
     {

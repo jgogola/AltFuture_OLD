@@ -37,7 +37,8 @@
                     <th>Competition</th>
                     <th>Start Date</th>
                     <th>End Date</th>
-                    <th>View</th>
+                    <th>Active</th>
+                    <th>Actions</th>
                  </tr>
             </thead>
             <tbody>
@@ -50,13 +51,17 @@
                                 @(competition_player.competition.competition_title)
                             </td>
                             <td class="r">
-                                @(competition_player.competition.competition_start_date)
+                                @($"{competition_player.competition.competition_start_date:MM/dd/yyyy}")
                             </td>
                             <td class="r">
-                                @(competition_player.competition.competition_end_date)
+                                @($"{competition_player.competition.competition_end_date:MM/dd/yyyy}")
                             </td>
                             <td class="c">
-                                <a asp-area="CelebrityDeathPool" asp-controller="MyCelebrityRoster" asp-action="Index" asp-route-id="@(competition_player.competition.competition_key)">View</a>
+                                @(competition_player.competition.is_active_competition)
+                            </td>
+                            <td class="c">
+                                <a asp-area="CelebrityDeathPool" asp-controller="MyCelebrityRoster" asp-action="Index" asp-route-id="@(competition_player.competition.competition_key)">My Roster</a>
+                                <a asp-area="CelebrityDeathPool" asp-controller="AllCelebrityRosters" asp-action="Index" asp-route-id="@(competition_player.competition.competition_key)">All Rosters</a>
                             </td>
                         </tr>
 

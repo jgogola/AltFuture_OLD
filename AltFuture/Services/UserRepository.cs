@@ -36,7 +36,7 @@ namespace AltFuture.Services
                     last_name = (string)dr["last_name"] ?? "",
                     full_name = (string)dr["full_name"] ?? "",
                     nick_name = (string)dr["nick_name"] ?? "",
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_user = (Boolean)dr["is_active_user"],
                     created_date = Convert.IsDBNull(dr["created_date"]) ? null : (DateTime)dr["created_date"],
                     last_login_date = Convert.IsDBNull(dr["last_login_date"]) ? null : (DateTime)dr["last_login_date"],
                     lk_user_role = lk_user_role
@@ -72,7 +72,7 @@ namespace AltFuture.Services
                     last_name = (string)dr["last_name"] ?? "",
                     full_name = (string)dr["full_name"] ?? "",
                     nick_name = (string)dr["nick_name"] ?? "",
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_user = (Boolean)dr["is_active_user"],
                     created_date = Convert.IsDBNull(dr["created_date"]) ? null : (DateTime)dr["created_date"],
                     last_login_date = Convert.IsDBNull(dr["last_login_date"]) ? null : (DateTime)dr["last_login_date"],
                     lk_user_role = lk_user_role
@@ -108,7 +108,7 @@ namespace AltFuture.Services
                     last_name = (string)dr["last_name"] ?? "",
                     full_name = (string)dr["full_name"] ?? "",
                     nick_name = (string)dr["nick_name"] ?? "",
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_user = (Boolean)dr["is_active_user"],
                     created_date = Convert.IsDBNull(dr["created_date"]) ? null : (DateTime)dr["created_date"],
                     last_login_date = Convert.IsDBNull(dr["last_login_date"]) ? null : (DateTime)dr["last_login_date"],
                     lk_user_role = lk_user_role
@@ -143,7 +143,7 @@ namespace AltFuture.Services
                     last_name = (string)dr["last_name"] ?? "",
                     full_name = (string)dr["full_name"] ?? "",
                     nick_name = (string)dr["nick_name"] ?? "",
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_user = (Boolean)dr["is_active_user"],
                     created_date = Convert.IsDBNull(dr["created_date"]) ? null : (DateTime)dr["created_date"],
                     last_login_date = Convert.IsDBNull(dr["last_login_date"]) ? null : (DateTime)dr["last_login_date"],
                     lk_user_role = lk_user_role

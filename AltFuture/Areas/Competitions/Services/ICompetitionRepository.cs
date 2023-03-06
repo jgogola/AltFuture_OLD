@@ -6,7 +6,7 @@ namespace AltFuture.Areas.Competitions.Services
     {
         Competition CompetitionGet(int compitition_key);
 
-        List<Competition> CompetitionGetList(int is_active = -1, int user_key = 0);
+        List<Competition> CompetitionGetList(int is_active_competition = -1, int user_key = 0);
 
      
     }

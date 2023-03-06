@@ -47,7 +47,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     user_key = (int)dr["user_key"],
                     full_name = (string)dr["full_name"],
                     nick_name = (string)dr["nick_name"],
-                    is_active = (Boolean)dr["is_active_user"]
+                    is_active_user = (Boolean)dr["is_active_user"]
                 };
 
                 LK_Competition_Type lk_competition_type = new LK_Competition_Type
@@ -62,7 +62,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_competition = (Boolean)dr["is_active_competition"],
                     competition_start_date = (DateTime)dr["competition_start_date"],
                     competition_end_date = (DateTime)dr["competition_end_date"],
                     lk_competition_type = lk_competition_type
@@ -132,7 +132,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     user_key = (int)dr["user_key"],
                     full_name = (string)dr["full_name"],
                     nick_name = (string)dr["nick_name"],
-                    is_active = (Boolean)dr["is_active_user"]
+                    is_active_user = (Boolean)dr["is_active_user"]
                 };
 
                 LK_Competition_Type lk_competition_type = new LK_Competition_Type
@@ -147,7 +147,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_competition = (Boolean)dr["is_active_competition"],
                     competition_start_date = (DateTime)dr["competition_start_date"],
                     competition_end_date = (DateTime)dr["competition_end_date"],
                     lk_competition_type = lk_competition_type
@@ -217,7 +217,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     user_key = (int)dr["user_key"],
                     full_name = (string)dr["full_name"],
                     nick_name = (string)dr["nick_name"],
-                    is_active = (Boolean)dr["is_active_user"]
+                    is_active_user = (Boolean)dr["is_active_user"]
                 };
 
                 LK_Competition_Type lk_competition_type = new LK_Competition_Type
@@ -232,7 +232,7 @@ namespace AltFuture.Areas.CelebrityDeathPool.Services
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_competition = (Boolean)dr["is_active_competition"],
                     competition_start_date = (DateTime)dr["competition_start_date"],
                     competition_end_date = (DateTime)dr["competition_end_date"],
                     lk_competition_type = lk_competition_type

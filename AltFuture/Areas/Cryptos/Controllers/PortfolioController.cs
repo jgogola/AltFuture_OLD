@@ -49,7 +49,7 @@ namespace AltFuture.Areas.Cryptos.Controllers
         }
 
 
-        [Authorize(Policy = "CryptoAdminPolicy")]
+        //[Authorize(Policy = "CryptoAdminPolicy")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateCryptoPricesAPI(int id)

@@ -2,7 +2,7 @@
 using AltFuture.Areas.Competitions.Services;
 using System.ComponentModel.DataAnnotations;
 
-namespace AltFuture.Services
+namespace AltFuture.Areas.Competitions.Services
 {
     public class CompetitionRepository : ICompetitionRepository
     {
@@ -32,7 +32,7 @@ namespace AltFuture.Services
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_competition = (Boolean)dr["is_active_competition"],
                     competition_start_date = (DateTime)dr["competition_start_date"],
                     competition_end_date = (DateTime)dr["competition_end_date"],
                     lk_competition_type = lk_competition_type
@@ -45,9 +45,9 @@ namespace AltFuture.Services
             return new Competition();
         }
 
-        public List<Competition> CompetitionGetList(int is_active = -1, int user_key = 0)
+        public List<Competition> CompetitionGetList(int is_active_competition = -1, int user_key = 0)
         {
-            DataTable dt = _db.GetDT("comp.usp_Competition_Get_List", new List<Object> {is_active, user_key });
+            DataTable dt = _db.GetDT("comp.usp_Competition_Get_List", new List<Object> { is_active_competition, user_key });
             List<Competition> competitions = new List<Competition>();
 
             foreach (DataRow dr in dt.Rows)
@@ -65,7 +65,7 @@ namespace AltFuture.Services
                     competition_title = (string)dr["competition_title"],
                     competition_desc = (string)dr["competition_desc"],
                     payout_desc = (string)dr["payout_desc"],
-                    is_active = (Boolean)dr["is_active"],
+                    is_active_competition = (Boolean)dr["is_active_competition"],
                     competition_start_date = (DateTime)dr["competition_start_date"],
                     competition_end_date = (DateTime)dr["competition_end_date"],
                     lk_competition_type = lk_competition_type

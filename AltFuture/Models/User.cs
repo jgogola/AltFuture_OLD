@@ -20,7 +20,7 @@ namespace AltFuture.Models
 
         public string nick_name { get; set; } = "";
 
-        public Boolean is_active { get; set; } = true;
+        public Boolean is_active_user { get; set; } = true;
 
         public DateTime? created_date { get; set; }
 
